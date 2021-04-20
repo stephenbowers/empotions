@@ -1,3 +1,5 @@
+import PriceInput from '../components/PriceInput';
+
 export default {
     name: 'potion',
     title: 'Potions',
@@ -31,6 +33,7 @@ export default {
             title: 'Price',
             type: 'number',
             description: 'Price of the potion in cents',
+            inputComponent: PriceInput,
         },
         {
             name: 'ingredients',

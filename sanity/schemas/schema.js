@@ -8,6 +8,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 import potion from './potion';
 import ingredient from './ingredient';
+import person from './person';
 
 export default createSchema({
   // We name our schema
@@ -18,5 +19,6 @@ export default createSchema({
     /* Your types here! */
     potion,
     ingredient,
+    person,
   ]),
 })
