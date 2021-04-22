@@ -53,15 +53,8 @@ function countPotionsInIngredients(potions) {
 
 export default function IngredientsFilter() {
     // List of ingredients
-    const { ingredients, potions } = useStaticQuery(graphql`
+    const { potions } = useStaticQuery(graphql`
         query {
-            ingredients: allSanityIngredient {
-              nodes {
-                name
-                id
-                vegan
-              }
-            }
             potions: allSanityPotion {
                 nodes {
                     ingredients {
