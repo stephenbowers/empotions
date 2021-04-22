@@ -3,19 +3,27 @@ import React from "react";
 import IngredientsFilter from "../components/IngredientFilter";
 import PotionList from "../components/PotionList";
 
-export default function PotionsPage({ data }) {
+export default function PotionsPage({ data, pageContext }) {
   const potions = data.potions.nodes;
   return (
     <>
-      <IngredientsFilter />
+      <IngredientsFilter activeIngredient={pageContext.ingredient} />
       <PotionList potions={potions} />
     </>
   );
 }
 
 export const query = graphql`
-  query PotionQuery {
-    potions: allSanityPotion {
+  query PotionQuery($ingredient: [String]) {
+    potions: allSanityPotion(filter: {
+      ingredients: {
+        elemMatch: {
+          name: {
+            in: $ingredient
+          }
+        }
+      }
+    }) {
       nodes {
         name
         id

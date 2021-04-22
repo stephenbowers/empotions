@@ -29,10 +29,43 @@ async function turnPotionsIntoPages({ graphql, actions }) {
     });
 }
 
+async function turnIngredientsIntoPages({ graphql, actions }) {
+    console.log("Turning ingredients into Pages");
+    // Get template
+    const ingredientTemplate = path.resolve('./src/pages/potions.js');
+    // Query all ingredients
+    const { data } = await graphql(`
+        query {
+            ingredients: allSanityIngredient {
+                nodes {
+                    name
+                    id
+                }
+            }
+        }
+    `);
+    // createPage for ingredient
+    data.ingredients.nodes.forEach(ingredient => {
+        actions.createPage({
+            path: `ingredient/${ingredient.name}`,
+            component: ingredientTemplate,
+            context: {
+                ingredient: ingredient.name,
+                // TODO: Regex for ingredient
+            }
+
+        })
+    })
+    // Pass ingredient data to potion.js
+}
+
 export async function createPages(params) {
     // Create pages dynamically
+    await Promise.all([
+        turnPotionsIntoPages(params),
+        turnIngredientsIntoPages(params)
+    ]);
     // Potions
-    await turnPotionsIntoPages(params);
     // Ingredients
     // Employees
 }

@@ -19,7 +19,7 @@ const IngredientsStyles = styled.div`
             background: white;
             padding: 2px 5px;
         }
-        .active {
+        &[aria-current='page'] {
             background: var(--yellow);
         }
     }
@@ -51,7 +51,7 @@ function countPotionsInIngredients(potions) {
         return sortedIngredients;
 }
 
-export default function IngredientsFilter() {
+export default function IngredientsFilter({ activeIngredient }) {
     // List of ingredients
     const { potions } = useStaticQuery(graphql`
         query {
@@ -71,8 +71,12 @@ export default function IngredientsFilter() {
     const ingredientsWithCounts = countPotionsInIngredients(potions.nodes);
     return (
         <IngredientsStyles>
+            <Link to="/potions">
+                <span className="name">All</span>
+                <span className="count">{potions.nodes.length}</span>
+            </Link>
             {ingredientsWithCounts.map(ingredient => (
-                <Link to={`/ingredient/${ingredient.name}`} key={ingredient.id}>
+                <Link to={`/ingredient/${ingredient.name}`} key={ingredient.id} >
                     <span className="name">{ingredient.name}</span>
                     <span className="count">{ingredient.count}</span>
                 </Link>
