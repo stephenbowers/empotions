@@ -30,7 +30,6 @@ async function turnPotionsIntoPages({ graphql, actions }) {
 }
 
 async function turnIngredientsIntoPages({ graphql, actions }) {
-    console.log("Turning ingredients into Pages");
     // Get template
     const ingredientTemplate = path.resolve('./src/pages/potions.js');
     // Query all ingredients
@@ -59,11 +58,40 @@ async function turnIngredientsIntoPages({ graphql, actions }) {
     // Pass ingredient data to potion.js
 }
 
+async function turnEmployeesIntoPages({ graphql, actions }) {
+    const employeeTemplate = path.resolve('./src/templates/Employee.js');
+
+    const { data } = await graphql(`
+        query {
+            employees: allSanityPerson {
+                nodes {
+                    name
+                    slug {
+                        current
+                    }
+                }
+            }
+        }
+    `);
+
+    data.employees.nodes.forEach(employee => {
+        actions.createPage({
+            // URL for new page
+            path: `employee/${employee.slug.current}`,
+            component: employeeTemplate,
+            context: {
+                slug: employee.slug.current,
+            }
+        });
+    });
+}
+
 export async function createPages(params) {
     // Create pages dynamically
     await Promise.all([
         turnPotionsIntoPages(params),
-        turnIngredientsIntoPages(params)
+        turnIngredientsIntoPages(params),
+        turnEmployeesIntoPages(params),
     ]);
     // Potions
     // Ingredients
