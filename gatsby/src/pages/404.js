@@ -1,5 +1,12 @@
 import React from "react";
+import SEO from "../components/SEO";
 
 export default function FourOhFourPage() {
-  return <p>Sorry, that page doesn't exist!</p>;
+
+  return (
+    <>
+    <SEO title={`Page Not Found`} />
+    <p>Sorry, that page doesn't exist!</p>
+    </>
+  );
 }

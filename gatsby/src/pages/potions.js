@@ -2,11 +2,13 @@ import { graphql } from "gatsby";
 import React from "react";
 import IngredientsFilter from "../components/IngredientFilter";
 import PotionList from "../components/PotionList";
+import SEO from "../components/SEO";
 
 export default function PotionsPage({ data, pageContext }) {
   const potions = data.potions.nodes;
   return (
     <>
+      <SEO title={pageContext.ingredient ? `Potions with ${pageContext.ingredient}` : `All Potions`} />
       <IngredientsFilter activeIngredient={pageContext.ingredient} />
       <PotionList potions={potions} />
     </>

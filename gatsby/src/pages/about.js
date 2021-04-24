@@ -1,14 +1,18 @@
 import { graphql } from "gatsby";
 import React from "react";
 import EmployeeList from "../components/EmployeeList";
+import SEO from "../components/SEO";
 
 export default function AboutPage({ data }) {
   const employees = data.employees.nodes;
   return (
+    <>
+    <SEO title={`About Us`} />
     <div>
       <h2>About Page</h2>
       <EmployeeList employees={employees} />
     </div>
+    </>
   );
 };
 

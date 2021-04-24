@@ -13,12 +13,14 @@ export default {
     title: `EmPotions`,
     siteUrl: 'https://thatstephenbowers.com/empotions',
     description: 'An online potion store',
+    twitter: '@EmPotions',
   },
   plugins: [
     'gatsby-plugin-styled-components',
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`, // Needed for dynamic images
+    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-sanity',
       options: {

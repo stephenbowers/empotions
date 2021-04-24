@@ -2,6 +2,7 @@ import { graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
 import styled from 'styled-components';
+import SEO from '../components/SEO';
 
 const PotionGrid = styled.div`
     display: grid;
@@ -12,6 +13,8 @@ const PotionGrid = styled.div`
 export default function SinglePotionPage({ data }) {
     const potion = data.potion;
     return (
+        <>
+        <SEO title={potion.name} image={potion.image?.asset?.url} />
         <PotionGrid>
             <GatsbyImage image={potion.image.asset.gatsbyImageData} alt={potion.name} />
             <div>
@@ -23,6 +26,7 @@ export default function SinglePotionPage({ data }) {
                 </ul>
             </div>
         </PotionGrid>
+        </>
     );
 };
 
@@ -36,6 +40,7 @@ export const query = graphql`
             id
             image {
                 asset {
+                    url
                     gatsbyImageData(width: 800, placeholder: BLURRED)
                 }
             }
