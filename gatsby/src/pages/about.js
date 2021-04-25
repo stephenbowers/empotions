@@ -9,7 +9,10 @@ export default function AboutPage({ data }) {
     <>
     <SEO title={`About Us`} />
     <div>
-      <h2>About Page</h2>
+      <h2>The Origins of EmPotions</h2>
+      <p>
+        EmPotions is founded on the passion to heal through nature and magic.
+      </p>
       <EmployeeList employees={employees} />
     </div>
     </>
