@@ -28,7 +28,7 @@ function SinglePotion({ potion }) {
     return (
         <PotionStyles>
             <Link to={`/potion/${potion.slug.current}`}>
-                <h2>{potion.name}</h2>
+                <h2>{potion.name} - {potion.price}</h2>
             </Link>
             <p>{potion.ingredients.map(ingredient => ingredient.name).join(', ')}</p>
             <GatsbyImage image={potion.image.asset.gatsbyImageData} alt={potion.name} />

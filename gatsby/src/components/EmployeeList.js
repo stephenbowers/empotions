@@ -17,7 +17,7 @@ function SingleEmployee({ employee }) {
 export default function EmployeeList({ employees }) {
     return (
         <div>
-            <h2>Employee List</h2>
+            <h2>Our Healing Experts</h2>
             {employees.map(employee => (
                 <SingleEmployee employee={employee} key={employee.id} />
             ))}

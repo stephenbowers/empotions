@@ -7,8 +7,10 @@ async function turnPotionsIntoPages({ graphql, actions }) {
     const { data } = await graphql(`
         query {
             potions: allSanityPotion {
+                totalCount
                 nodes {
                     name
+                    id
                     slug {
                         current
                     }
@@ -24,7 +26,24 @@ async function turnPotionsIntoPages({ graphql, actions }) {
             component: potionTemplate,
             context: {
                 slug: potion.slug.current,
-            }
+            },
+        });
+    });
+
+    // Determine number of pages based on number of potions by amount per page
+    const pageSize = parseInt(process.env.GATSBY_PAGE_SIZE);
+    const pageCount = Math.ceil(data.potions.totalCount / pageSize);
+    
+    // Loop from 1 to n and create pages for each
+    Array.from({ length: pageCount }).forEach((_, i) => {
+        actions.createPage({
+            path: `/potions/${i + 1}`,
+            component: path.resolve('./src/pages/potions.js'),
+            context: {
+                skip: i * pageSize,
+                currentPage: i + 1,
+                pageSize,
+            },
         });
     });
 }

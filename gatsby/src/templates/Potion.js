@@ -18,7 +18,7 @@ export default function SinglePotionPage({ data }) {
         <PotionGrid>
             <GatsbyImage image={potion.image.asset.gatsbyImageData} alt={potion.name} />
             <div>
-                <h2>{potion.name}</h2>
+                <h2>{potion.name} - {potion.price}</h2>
                 <ul>
                     {potion.ingredients.map(ingredient => (
                         <li key={ingredient.id}>{ingredient.name}</li>
@@ -38,6 +38,7 @@ export const query = graphql`
         }) {
             name
             id
+            price
             image {
                 asset {
                     url
