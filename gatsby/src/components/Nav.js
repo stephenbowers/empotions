@@ -48,9 +48,7 @@ export default function Nav() {
                 <li className="logo">
                     <Link to="/"><img src={Logo} alt="logo" /></Link>
                 </li>
-                <li>
-                    <Link to="/cart">Cart</Link>
-                </li>
+                <button class="snipcart-checkout">Cart</button>
                 <li>
                     <Link to="/">Sign In</Link>
                 </li>

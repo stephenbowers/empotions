@@ -2,6 +2,7 @@ import { Link } from 'gatsby';
 import React from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
+import formatMoney from '../utils/formatMoney';
 
 const PotionGridStyles = styled.div`
     display: grid;
@@ -25,13 +26,24 @@ const PotionStyles = styled.div`
 `;
 
 function SinglePotion({ potion }) {
+    const price = (potion.price / 100).toFixed(2);
     return (
         <PotionStyles>
             <Link to={`/potion/${potion.slug.current}`}>
-                <h2>{potion.name} - {potion.price}</h2>
+                <h2>{potion.name} - {formatMoney(potion.price)}</h2>
             </Link>
             <p>{potion.ingredients.map(ingredient => ingredient.name).join(', ')}</p>
             <GatsbyImage image={potion.image.asset.gatsbyImageData} alt={potion.name} />
+            <button
+                className="snipcart-add-item"
+                data-item-id={potion.id}
+                data-item-price={price}
+                data-item-url={`/potions`}
+                data-item-image={potion.image.asset.url}
+                data-item-name={potion.name}
+            >
+                Add to Cart
+            </button>
         </PotionStyles>
     );
 }

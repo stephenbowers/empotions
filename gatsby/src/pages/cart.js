@@ -5,7 +5,7 @@ export default function CartPage() {
   return (
     <>
       <SEO title={`Your Cart`} />
-      <div>Cart Page</div>
+      <h2>Cart Page</h2>
     </>
   );
 }

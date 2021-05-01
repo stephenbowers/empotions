@@ -31,5 +31,12 @@ export default {
         token: process.env.SANITY_TOKEN,
       },
     },
+    {
+      resolve: 'gatsby-plugin-snipcart',
+      options: {
+        apiKey: 'NTg2Yzk4MGQtOWExOC00MGE2LThjODUtMWQzZWNjMDNhYjY5NjM3NTQ5MDkxOTU0ODA2OTUx',
+        autopop: true,
+      },
+    },
   ],
 }
