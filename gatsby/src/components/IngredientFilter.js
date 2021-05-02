@@ -1,5 +1,5 @@
 import { graphql, Link, useStaticQuery } from 'gatsby';
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const IngredientsStyles = styled.div`
@@ -22,6 +22,10 @@ const IngredientsStyles = styled.div`
         &[aria-current='page'] {
             background: var(--yellow);
         }
+    }
+
+    .hidden {
+        display: none;
     }
 `;
 
@@ -52,6 +56,17 @@ function countPotionsInIngredients(potions) {
 }
 
 export default function IngredientsFilter({ activeIngredient }) {
+    const [state, setState ] = useState({
+        visible: true,
+    });
+
+    const toggleVisibility = () => {
+        setState({
+            ...state,
+            visible: !state.visible,
+        });
+    };
+
     // List of ingredients
     const { potions } = useStaticQuery(graphql`
         query {
@@ -69,17 +84,19 @@ export default function IngredientsFilter({ activeIngredient }) {
 
     // Count how many potions are in each ingredient
     const ingredientsWithCounts = countPotionsInIngredients(potions.nodes);
+    const ingredientsHidden = state.visible ? '' : 'hidden';
     return (
         <IngredientsStyles>
-            <Link to="/potions">
+            {!state.visible ? <button onClick={toggleVisibility}>Show Filter</button> : <button onClick={toggleVisibility}>Hide Filter</button>}
+            <Link className={ingredientsHidden} to="/potions" >
                 <span className="name">All</span>
                 <span className="count">{potions.nodes.length}</span>
             </Link>
             {ingredientsWithCounts.map(ingredient => (
-                <Link to={`/ingredient/${ingredient.name}`} key={ingredient.id} >
-                    <span className="name">{ingredient.name}</span>
-                    <span className="count">{ingredient.count}</span>
-                </Link>
+            <Link className={ingredientsHidden} to={`/ingredient/${ingredient.name}`} key={ingredient.id} >
+                <span className="name">{ingredient.name}</span>
+                <span className="count">{ingredient.count}</span>
+            </Link>
             ))}
         </IngredientsStyles>
     );
