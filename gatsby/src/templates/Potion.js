@@ -8,7 +8,7 @@ import formatMoney from '../utils/formatMoney';
 const PotionGrid = styled.div`
     display: grid;
     gap: 2rem;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 `;
 
 export default function SinglePotionPage({ data }) {
@@ -57,7 +57,7 @@ export const query = graphql`
             image {
                 asset {
                     url
-                    gatsbyImageData(width: 800, placeholder: BLURRED)
+                    gatsbyImageData(width: 400, placeholder: BLURRED)
                 }
             }
             ingredients {

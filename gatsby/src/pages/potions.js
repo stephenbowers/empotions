@@ -19,12 +19,19 @@ export default function PotionsPage({ data, pageContext }) {
         base="/potions"
       />
       <PotionList potions={potions} />
+      <Pagination 
+        pageSize={parseInt(process.env.GATSBY_PAGE_SIZE)}
+        totalCount={data.potions.totalCount}
+        currentPage={pageContext.currentPage || 1}
+        skip={pageContext.skip}
+        base="/potions"
+      />
     </>
   );
 }
 
 export const query = graphql`
-  query PotionQuery($ingredient: [String], $skip: Int = 0, $pageSize: Int = 2) {
+  query PotionQuery($ingredient: [String], $skip: Int = 0, $pageSize: Int = 4) {
     potions: allSanityPotion(filter: {
       ingredients: {
         elemMatch: {
