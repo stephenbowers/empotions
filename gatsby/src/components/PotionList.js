@@ -39,8 +39,9 @@ function SinglePotion({ potion }) {
                 data-item-id={potion.id}
                 data-item-price={price}
                 data-item-url={`/potions`}
-                data-item-image={potion.image.asset.url}
+                data-item-image={potion.image && potion.image.asset.url}
                 data-item-name={potion.name}
+                data-item-description={potion.description}
             >
                 Add to Cart
             </button>

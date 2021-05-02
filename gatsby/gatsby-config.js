@@ -32,10 +32,14 @@ export default {
       },
     },
     {
-      resolve: 'gatsby-plugin-snipcart',
+      resolve: 'gatsby-plugin-snipcart-advanced',
       options: {
-        apiKey: 'NTg2Yzk4MGQtOWExOC00MGE2LThjODUtMWQzZWNjMDNhYjY5NjM3NTQ5MDkxOTU0ODA2OTUx',
-        autopop: true,
+        version: '3.0.29',
+        publicApiKey: 'NTg2Yzk4MGQtOWExOC00MGE2LThjODUtMWQzZWNjMDNhYjY5NjM3NTQ5MDkxOTU0ODA2OTUx',
+        defaultLang: 'en',
+        currency: 'usd',
+        openCartOnAdd: false,
+        useSideCart: true,
       },
     },
   ],

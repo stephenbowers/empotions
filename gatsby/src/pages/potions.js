@@ -46,11 +46,13 @@ export const query = graphql`
         name
         id
         price
+        description
         slug {
           current
         }
         image {
           asset {
+            url
             gatsbyImageData(width: 400, placeholder: BLURRED)
           }
         }

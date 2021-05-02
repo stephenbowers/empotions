@@ -21,7 +21,9 @@ export default function SinglePotionPage({ data }) {
             <GatsbyImage image={potion.image.asset.gatsbyImageData} alt={potion.name} />
             <div>
                 <h2>{potion.name} - {formatMoney(potion.price)}</h2>
+                <p>{potion.description}</p>
                 <ul>
+                    <span>Active Ingredients:</span>
                     {potion.ingredients.map(ingredient => (
                         <li key={ingredient.id}>{ingredient.name}</li>
                     ))}
@@ -31,8 +33,9 @@ export default function SinglePotionPage({ data }) {
                     data-item-id={potion.id}
                     data-item-price={price}
                     data-item-url={`/potion/${potion.slug.current}`}
-                    data-item-image={potion.image.asset.url}
+                    data-item-image={potion.image && potion.image.asset.url}
                     data-item-name={potion.name}
+                    data-item-description={potion.description}
                 >
                     Add to Cart
                 </button>
@@ -51,6 +54,7 @@ export const query = graphql`
             name
             id
             price
+            description
             slug {
                 current
             }

@@ -84,10 +84,10 @@ export default function IngredientsFilter({ activeIngredient }) {
 
     // Count how many potions are in each ingredient
     const ingredientsWithCounts = countPotionsInIngredients(potions.nodes);
-    const ingredientsHidden = state.visible ? '' : 'hidden';
+    const ingredientsHidden = state.visible ? 'hidden' : '';
     return (
         <IngredientsStyles>
-            {!state.visible ? <button onClick={toggleVisibility}>Show Filter</button> : <button onClick={toggleVisibility}>Hide Filter</button>}
+            {!state.visible ? <button onClick={toggleVisibility}>Hide Ingredient Filter Options</button> : <button onClick={toggleVisibility}>Show Ingredient Filter Options</button>}
             <Link className={ingredientsHidden} to="/potions" >
                 <span className="name">All</span>
                 <span className="count">{potions.nodes.length}</span>
