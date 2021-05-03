@@ -18,6 +18,12 @@ const GlobalStyles = createGlobalStyle`
   body {
     font-size: 2rem;
   }
+  footer {
+    text-align: center;
+    p {
+      margin: 0;
+    }
+  }
   fieldset {
     border-color: rgba(0,0,0,0.1);
     border-width: 1px;

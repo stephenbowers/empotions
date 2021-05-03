@@ -53,7 +53,7 @@ export const query = graphql`
         image {
           asset {
             url
-            gatsbyImageData(width: 400, placeholder: BLURRED)
+            gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
           }
         }
         ingredients {

@@ -2,19 +2,26 @@ import React from 'react';
 import styled from 'styled-components';
 import SinglePotion from '../components/SinglePotion';
 
-const PotionGridStyles = styled.div`
+const FeaturedPotionGridStyles = styled.div`
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 4rem;
     grid-auto-rows: auto auto 1fr auto;
+
+    h2 {
+        font-size: 2.5rem;
+    }
+    p {
+        font-size: 2rem;
+    }
 `;
 
-export default function PotionList({ potions }) {
+export default function FeaturedPotionList({ potions }) {
     return (
-        <PotionGridStyles>
+        <FeaturedPotionGridStyles>
         {potions.map(potion => (
             <SinglePotion potion={potion} key={potion.id} />
         ))}
-        </PotionGridStyles>
+        </FeaturedPotionGridStyles>
     );
 }

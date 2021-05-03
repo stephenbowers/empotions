@@ -18,7 +18,11 @@ export default function SinglePotionPage({ data }) {
         <>
         <SEO title={potion.name} image={potion.image?.asset?.url} />
         <PotionGrid>
-            <GatsbyImage image={potion.image.asset.gatsbyImageData} alt={potion.name} />
+            <GatsbyImage 
+                image={potion.image.asset.gatsbyImageData}
+                alt={potion.name}
+                layout="constrained"
+                />
             <div>
                 <h2>{potion.name} - {formatMoney(potion.price)}</h2>
                 <p>{potion.description}</p>
@@ -61,7 +65,11 @@ export const query = graphql`
             image {
                 asset {
                     url
-                    gatsbyImageData(width: 400, placeholder: BLURRED)
+                    gatsbyImageData(
+                        width: 400,
+                        placeholder: BLURRED,
+                        formats: [AUTO, WEBP, AVIF]
+                    )
                 }
             }
             ingredients {

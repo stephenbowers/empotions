@@ -36,6 +36,21 @@ export default {
             inputComponent: PriceInput,
         },
         {
+            name: 'featured',
+            title: 'Featured',
+            type: 'boolean',
+            description: 'Would you like to make this a featured potion?',
+            options: {
+                layout: 'checkbox',
+            },
+        },
+        {
+            name: 'description',
+            title: 'Description',
+            type: 'text',
+            description: 'What does the potion do?',
+        },
+        {
             name: 'ingredients',
             title: 'Ingredients',
             type: 'array',

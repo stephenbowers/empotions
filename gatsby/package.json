@@ -14,7 +14,6 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "@stripe/stripe-js": "^1.14.0",
     "dotenv": "^8.2.0",
     "esm": "^3.2.25",
     "gatsby": "^3.2.1",
@@ -31,6 +30,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
+    "react-icons": "^4.2.0",
     "styled-components": "^5.2.3"
   },
   "devDependencies": {

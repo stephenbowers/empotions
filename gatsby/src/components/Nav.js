@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import Logo from '../../static/logo.svg';
+import { FaShoppingCart } from "react-icons/fa";
 
 const NavStyles = styled.nav`
     margin-bottom: 3rem;
@@ -33,6 +34,23 @@ const NavStyles = styled.nav`
         transform: translateY(-25%);
         border: 2px solid black;
     }
+
+    button {
+        display: flex;
+        background-color: white;
+        color: black;
+        &:hover {
+            color: red;
+        }
+        box-shadow: none;
+        text-shadow: none;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        span {
+            margin-left: 1rem;
+        }
+    }
 `;
 
 export default function Nav() {
@@ -49,7 +67,7 @@ export default function Nav() {
                     <Link to="/"><img src={Logo} alt="logo" /></Link>
                 </li>
                     <button className="header__checkout snipcart-checkout">
-                        Cart <span className="snipcart-items-count">0</span>
+                        <FaShoppingCart /><span className="snipcart-items-count">0</span>
                     </button>
                 <li>
                     <button class="snipcart-customer-signin">My account</button>
