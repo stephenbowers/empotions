@@ -1,17 +1,27 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import styled from 'styled-components';
+
+const SingleEmployeeStyles = styled.div`
+    display: grid;
+    grid-template-columns: auto auto;
+    div {
+        margin-left: 2rem;
+    }
+    margin-bottom: 2rem;
+`;
 
 export default function SingleEmployeePage({ data }) {
     const employee = data.employee;
     return (
-        <div>
+        <SingleEmployeeStyles>
             <GatsbyImage image={employee.image.asset.gatsbyImageData} alt={employee.name} />
             <div>
                 <h2>{employee.name}</h2>
                 <p>{employee.description}</p>
             </div>
-        </div>
+        </SingleEmployeeStyles>
     );
 }
 
@@ -25,7 +35,7 @@ export const query = graphql`
             description
             image {
                 asset {
-                    gatsbyImageData(width: 800, placeholder: BLURRED)
+                    gatsbyImageData(height: 500, placeholder: BLURRED)
                 }
             }
         }

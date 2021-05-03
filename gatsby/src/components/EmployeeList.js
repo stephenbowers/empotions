@@ -1,6 +1,24 @@
 import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { Link } from 'gatsby';
+import styled from 'styled-components';
+
+const EmployeeStyles = styled.div`
+    text-align: center;
+    img {
+        border-radius: 5px;
+    }
+    .employees {
+        display: flex;
+        flex-direction: column;
+        div:nth-child(even) {
+            align-self: flex-end;
+        }
+        div {
+            max-width: 450px;
+        }
+    }
+`;
 
 function SingleEmployee({ employee }) {
     return (
@@ -16,11 +34,13 @@ function SingleEmployee({ employee }) {
 
 export default function EmployeeList({ employees }) {
     return (
-        <div>
-            <h2>Our Healing Experts</h2>
+        <EmployeeStyles>
+            <h2 className="title">Our Healing Experts</h2>
+            <div className="employees">
             {employees.map(employee => (
                 <SingleEmployee employee={employee} key={employee.id} />
             ))}
-        </div>
+            </div>
+        </EmployeeStyles>
     )
 }
