@@ -4,6 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import SEO from '../components/SEO';
 import formatMoney from '../utils/formatMoney';
+import { GiPotionBall } from 'react-icons/gi';
 
 const PotionGrid = styled.div`
     display: grid;
@@ -24,7 +25,7 @@ export default function SinglePotionPage({ data }) {
                 layout="constrained"
                 />
             <div>
-                <h2>{potion.name} - {formatMoney(potion.price)}</h2>
+                <h2>{potion.name} <GiPotionBall /> {formatMoney(potion.price)}</h2>
                 <p>{potion.description}</p>
                 <ul>
                     <span>Active Ingredients:</span>

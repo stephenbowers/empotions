@@ -3,6 +3,7 @@ import React from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import formatMoney from '../utils/formatMoney';
+import { GiPotionBall } from 'react-icons/gi';
 
 const PotionStyles = styled.div`
 display: grid;
@@ -25,7 +26,7 @@ export default function SinglePotion({ potion }) {
     return (
         <PotionStyles>
             <Link to={`/potion/${potion.slug.current}`}>
-                <h2>{potion.name} - {formatMoney(potion.price)}</h2>
+                <h2>{potion.name} <GiPotionBall /> {formatMoney(potion.price)}</h2>
             </Link>
             <p>{firstFour.map(ingredient => ingredient.name).join(', ')}</p>
             <GatsbyImage

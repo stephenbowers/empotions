@@ -20,7 +20,7 @@ const NavStyles = styled.nav`
     a {
         text-decoration: none;
         &:hover {
-            color: red;
+            color: var(--purple);
         }
     }
 
@@ -33,6 +33,9 @@ const NavStyles = styled.nav`
     .logo {
         transform: translateY(-25%);
         border: 2px solid black;
+        &:hover {
+            border: 2px solid var(--purple);
+        }
     }
 
     button {
@@ -40,7 +43,7 @@ const NavStyles = styled.nav`
         background-color: white;
         color: black;
         &:hover {
-            color: red;
+            color: var(--purple);
         }
         box-shadow: none;
         text-shadow: none;
@@ -70,7 +73,7 @@ export default function Nav() {
                         <FaShoppingCart /><span className="snipcart-items-count">0</span>
                     </button>
                 <li>
-                    <button class="snipcart-customer-signin">My account</button>
+                    <a class="snipcart-customer-signin">My account</a>
                 </li>
             </ul>
         </NavStyles>

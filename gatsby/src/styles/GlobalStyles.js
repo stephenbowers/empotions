@@ -3,9 +3,9 @@ import bg from '../assets/images/bg.svg';
 
 const GlobalStyles = createGlobalStyle`
   :root {
-    --red: #FF4949;
+    --purple: #cd7afa;
     --black: #2E2E2E;
-    --yellow: #ffc600;
+    --blue: #34c2fa;
     --white: #fff;
     --grey: #efefef;
   }
@@ -23,13 +23,17 @@ const GlobalStyles = createGlobalStyle`
     p {
       margin: 0;
     }
+    div {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
   }
   fieldset {
     border-color: rgba(0,0,0,0.1);
     border-width: 1px;
   }
   button {
-    background: var(--red);
+    background: var(--purple);
     color: white;
     border: 0;
     padding: 0.6rem 1rem;
@@ -49,13 +53,13 @@ const GlobalStyles = createGlobalStyle`
   }
   html {
     scrollbar-width: thin;
-    scrollbar-color: var(--red) var(--white);
+    scrollbar-color: var(--purple) var(--white);
   }
   body::-webkit-scrollbar-track {
     background: var(--white);
   }
   body::-webkit-scrollbar-thumb {
-    background-color: var(--red) ;
+    background-color: var(--purple) ;
     border-radius: 6px;
     border: 3px solid var(--white);
   }
