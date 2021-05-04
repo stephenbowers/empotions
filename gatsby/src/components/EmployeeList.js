@@ -35,7 +35,7 @@ function SingleEmployee({ employee }) {
 export default function EmployeeList({ employees }) {
     return (
         <EmployeeStyles>
-            <h2 className="title">Our Healing Experts</h2>
+            <h2 className="title">Get To Know Us</h2>
             <div className="employees">
             {employees.map(employee => (
                 <SingleEmployee employee={employee} key={employee.id} />
