@@ -13,6 +13,14 @@ const SingleEmployeeStyles = styled.div`
         margin-left: 2rem;
     }
     margin-bottom: 2rem;
+
+    li {
+        list-style: none;
+    }
+
+    li a {
+        margin-left: 1rem;
+    }
 `;
 
 export default function SingleEmployeePage({ data }) {

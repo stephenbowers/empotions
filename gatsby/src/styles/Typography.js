@@ -18,6 +18,9 @@ const Typography = createGlobalStyle`
     font-weight: normal;
     margin: 0;
   }
+  h2, h3 {
+    font-weight: bold;
+  }
   a {
     color: var(--black);
     text-decoration-color: var(--red);
