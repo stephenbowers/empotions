@@ -9,7 +9,23 @@ import { GiPotionBall } from 'react-icons/gi';
 const PotionGrid = styled.div`
     display: grid;
     gap: 2rem;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+
+    img {
+        max-height: 100%;
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    li {
+        list-style: none;
+        margin-left: 2rem;
+    }
+
+    button {
+        width: 100%;
+    }
 `;
 
 export default function SinglePotionPage({ data }) {
@@ -28,7 +44,7 @@ export default function SinglePotionPage({ data }) {
                 <h2>{potion.name} <GiPotionBall /> {formatMoney(potion.price)}</h2>
                 <p>{potion.description}</p>
                 <ul>
-                    <span>Active Ingredients:</span>
+                    <h3>Active Ingredients:</h3>
                     {potion.ingredients.map(ingredient => (
                         <li key={ingredient.id}>{ingredient.name}</li>
                     ))}
@@ -67,7 +83,7 @@ export const query = graphql`
                 asset {
                     url
                     gatsbyImageData(
-                        width: 400,
+                        width: 300,
                         placeholder: BLURRED,
                         formats: [AUTO, WEBP, AVIF]
                     )

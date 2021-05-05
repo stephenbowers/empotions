@@ -8,7 +8,7 @@ import { GiPotionBall } from 'react-icons/gi';
 const PotionStyles = styled.div`
 display: grid;
 @supports not (grid-template-rows: subgrid) {
-    --rows: auto auto 1fr auto;
+    --rows: auto auto 300px auto;
 }
 grid-template-rows: var(--rows, subgrid); /* Sizing comes from PotionGridStyles div */
 grid-row: span 4;
@@ -18,6 +18,8 @@ p,
 button {
     margin: 0;
 }
+
+
 `;
 
 export default function SinglePotion({ potion }) {
@@ -32,7 +34,6 @@ export default function SinglePotion({ potion }) {
             <GatsbyImage
                 image={potion.image.asset.gatsbyImageData}
                 alt={potion.name}
-                layout="constrained"
             />
             <button
                 className="snipcart-add-item"

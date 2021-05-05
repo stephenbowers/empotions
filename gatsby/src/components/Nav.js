@@ -73,7 +73,7 @@ export default function Nav() {
                         <FaShoppingCart /><span className="snipcart-items-count">0</span>
                     </button>
                 <li>
-                    <a class="snipcart-customer-signin">My account</a>
+                    <button className="snipcart-customer-signin">Account</button>
                 </li>
             </ul>
         </NavStyles>

@@ -6,8 +6,6 @@ import styled from "styled-components";
 import { StaticImage } from "gatsby-plugin-image";
 
 const HomeStyles = styled.div`
-  margin-left: 4rem;
-  margin-right: 4rem;
   .hero img {
     margin: auto;
   }
@@ -22,8 +20,6 @@ const HomeStyles = styled.div`
 `;
 
 const FeaturedPotionsStyles = styled.div`
-  margin-left: 20rem;
-  margin-right: 20rem;
   .title {
     text-align: center;
     margin-bottom: 4rem;
@@ -41,7 +37,6 @@ export default function HomePage({ data }) {
         src="../assets/images/hero.jpeg"
         alt="Witchy Crystals and Modern Mystics patch"
         placeholder="blurred"
-        height={300}
         layout="fullWidth"
       />
       <p className="welcome">Welcome to EmPotions where we harness emotional alchemy to heal your body and soul!</p>
@@ -66,7 +61,10 @@ export const query = graphql`
       image {
         asset {
           url
-          gatsbyImageData(width: 300, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+          gatsbyImageData(
+            placeholder: BLURRED
+            formats: [AUTO, WEBP, AVIF]
+          )
         }
       }
       ingredients {

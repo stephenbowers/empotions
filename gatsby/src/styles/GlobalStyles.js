@@ -28,9 +28,8 @@ const GlobalStyles = createGlobalStyle`
       margin-bottom: 1rem;
     }
   }
-  fieldset {
-    border-color: rgba(0,0,0,0.1);
-    border-width: 1px;
+  a:hover {
+    color: var(--purple);
   }
   button {
     background: var(--purple);
@@ -45,6 +44,7 @@ const GlobalStyles = createGlobalStyle`
     transition: all 0.2s;
     &:hover {
       --cast: 4px;
+      background: var(--blue);
     }
   }
   /* Scrollbar Styles */
@@ -62,20 +62,6 @@ const GlobalStyles = createGlobalStyle`
     background-color: var(--purple) ;
     border-radius: 6px;
     border: 3px solid var(--white);
-  }
-  hr {
-    border: 0;
-    height: 8px;
-    background-size: 1500px;
-    background-color: white;
-  }
-  img {
-    max-width: 100%;
-  }
-  .tilt {
-    transform: rotate(-2deg);
-    position: relative;
-    display: inline-block;
   }
 `;
 

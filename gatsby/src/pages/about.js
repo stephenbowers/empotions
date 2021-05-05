@@ -5,6 +5,13 @@ import SEO from "../components/SEO";
 import { StaticImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 
+const AboutStyles = styled.div`
+  .history {
+    margin-left: 10rem;
+    margin-right: 10rem;
+  }
+`;
+
 const ServicesStyles = styled.div`
   display: flex;
   flex-direction: column;
@@ -18,18 +25,18 @@ export default function AboutPage({ data }) {
   return (
     <>
     <SEO title={`About Us`} />
-    <div>
+    <AboutStyles>
       <h2 className="center">The Origins of EmPotions</h2>
-      <p>
+      <p className="history">
         EmPotions is founded on the passion to heal through nature and magic.  The building sits where a medical clinic once stood in the 1600s.  It is a space with a history of pain and healing.  We have atuned ourselves with the spirits of that past that still wander the area.  Many guests of the cemetary across the street pay us visits.
       </p>
+      <p className="center"><strong>Ask about our séance party rates!</strong></p>
       <StaticImage 
         src="../assets/images/about-banner.jpeg"
         alt="Candles and crystals on ornate table"
         placeholder="blurred"
         width={1000}
         height={200}
-        objectFit="none"
       />
       <h2 className="center">In Store Services</h2>
       <ServicesStyles>
@@ -41,7 +48,7 @@ export default function AboutPage({ data }) {
         <span>Aroma Therapy</span>
       </ServicesStyles>
       <EmployeeList employees={employees} />
-    </div>
+    </AboutStyles>
     </>
   );
 };

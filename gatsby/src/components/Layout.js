@@ -16,6 +16,9 @@ const SiteBorderStyles = styled.div`
         margin-left: 1.5rem;
         margin-right: 1.5rem;
     }
+    @media(max-width: 700px) {
+        margin-top: 10rem;
+    }
 `;
 
 const ContentStyles = styled.div`

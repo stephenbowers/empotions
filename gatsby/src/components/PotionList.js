@@ -4,9 +4,16 @@ import SinglePotion from '../components/SinglePotion';
 
 const PotionGridStyles = styled.div`
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: 4rem;
     grid-auto-rows: auto auto 1fr auto;
+
+    img {
+        max-height: 100%;
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
 `;
 
 export default function PotionList({ potions }) {
