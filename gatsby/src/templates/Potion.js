@@ -26,6 +26,10 @@ const PotionGrid = styled.div`
     button {
         width: 100%;
         margin-top: 1rem;
+        &:hover {
+            --cast: 4px;
+            background: var(--blue);
+        }
     }
 
     @media (max-width: 400px) {

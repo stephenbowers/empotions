@@ -42,10 +42,6 @@ const GlobalStyles = createGlobalStyle`
     box-shadow: var(--cast) var(--cast) 0 var(--grey);
     text-shadow: 0.5px 0.5px 0 rgba(0,0,0,0.2);
     transition: all 0.2s;
-    &:hover {
-      --cast: 4px;
-      background: var(--blue);
-    }
   }
   /* Scrollbar Styles */
   body::-webkit-scrollbar {

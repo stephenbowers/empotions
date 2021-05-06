@@ -19,7 +19,10 @@ button {
     margin: 0;
 }
 
-
+button:hover {
+    --cast: 4px;
+    background: var(--blue);
+}
 `;
 
 export default function SinglePotion({ potion }) {
