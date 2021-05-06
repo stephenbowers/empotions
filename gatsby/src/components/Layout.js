@@ -16,8 +16,22 @@ const SiteBorderStyles = styled.div`
         margin-left: 1.5rem;
         margin-right: 1.5rem;
     }
-    @media(max-width: 700px) {
+    @media(max-width: 800px) {
         margin-top: 10rem;
+    }
+    @media(max-width: 600px) {
+        margin-top: 8rem;
+    }
+    @media (max-width: 500px) {
+        margin-top: 6rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    @media (max-width: 400px) {
+        margin-top: 4rem;
+        margin-left: .75rem;
+        margin-right: .75rem;
+        margin-bottom: 2rem;
     }
 `;
 

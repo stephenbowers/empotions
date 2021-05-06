@@ -25,6 +25,11 @@ const PotionGrid = styled.div`
 
     button {
         width: 100%;
+        margin-top: 1rem;
+    }
+
+    @media (max-width: 400px) {
+      grid-template-columns: minmax(300px, 1fr);
     }
 `;
 
@@ -42,13 +47,6 @@ export default function SinglePotionPage({ data }) {
                 />
             <div>
                 <h2>{potion.name} <GiPotionBall /> {formatMoney(potion.price)}</h2>
-                <p>{potion.description}</p>
-                <ul>
-                    <h3>Active Ingredients:</h3>
-                    {potion.ingredients.map(ingredient => (
-                        <li key={ingredient.id}>{ingredient.name}</li>
-                    ))}
-                </ul>
                 <button
                     className="snipcart-add-item"
                     data-item-id={potion.id}
@@ -60,6 +58,13 @@ export default function SinglePotionPage({ data }) {
                 >
                     Add to Cart
                 </button>
+                <p>{potion.description}</p>
+                <ul>
+                    <h3>Active Ingredients:</h3>
+                    {potion.ingredients.map(ingredient => (
+                        <li key={ingredient.id}>{ingredient.name}</li>
+                    ))}
+                </ul>
             </div>
         </PotionGrid>
         </>

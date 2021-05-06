@@ -21,6 +21,28 @@ const SingleEmployeeStyles = styled.div`
     li a {
         margin-left: 1rem;
     }
+
+    img {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @media (max-width: 600px) {
+        grid-template-columns: auto;
+        img {
+            width: 400px;
+            height: 400px;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+    }
+    @media (max-width: 400px) {
+        img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+        }
+    }
 `;
 
 export default function SingleEmployeePage({ data }) {

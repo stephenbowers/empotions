@@ -9,7 +9,24 @@ const AboutStyles = styled.div`
   .history {
     margin-left: 10rem;
     margin-right: 10rem;
+
+    @media (max-width: 800px) {
+      margin-left: 6rem;
+      margin-right: 6rem;
+    }
+
+    @media (max-width: 600px) {
+      margin-left: 4rem;
+      margin-right: 4rem;
+    }
+
+    @media (max-width: 400px) {
+      margin-left: 2rem;
+      margin-right: 2rem;
+    }
   }
+
+  
 `;
 
 const ServicesStyles = styled.div`

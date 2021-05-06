@@ -16,6 +16,14 @@ const HomeStyles = styled.div`
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+
+    @media(max-width: 800px) {
+      font-size: 3rem;
+    }
+
+    @media (max-width: 400px) {
+      font-size: 2.5rem;
+    }
   }
 `;
 
@@ -23,13 +31,17 @@ const FeaturedPotionsStyles = styled.div`
   .title {
     text-align: center;
     margin-bottom: 4rem;
+
+    @media (max-width: 400px) {
+      font-size: 2.75rem;
+      margin-bottom: 2rem;
+    }
   }
   margin-bottom: 2rem;
 `;
 
 export default function HomePage({ data }) {
   const potions = data.potions.nodes;
-  console.log(`Home Page data is ${potions}`)
   return (
     <HomeStyles>
       <SEO title={`Home`} />

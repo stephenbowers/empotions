@@ -21,6 +21,10 @@ const FeaturedPotionGridStyles = styled.div`
         margin-left: auto;
         margin-right: auto;
     }
+
+    @media (max-width: 400px) {
+      grid-template-columns: minmax(300px, 1fr);
+    }
 `;
 
 export default function FeaturedPotionList({ potions }) {

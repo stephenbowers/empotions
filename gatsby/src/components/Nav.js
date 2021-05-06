@@ -17,10 +17,21 @@ const NavStyles = styled.nav`
         list-style: none;
         margin-top: -3rem;
     }
+    li{
+        order: 1;
+    }
     a {
+        font-size: 4rem;
         text-decoration: none;
+        display: block;
         &:hover {
             color: var(--purple);
+        }
+        @media (max-width: 800px) {
+            font-size: 2rem;
+        }
+        &[aria-current='page'] {
+            color: var(--purple)
         }
     }
 
@@ -42,6 +53,7 @@ const NavStyles = styled.nav`
         display: flex;
         background-color: white;
         color: black;
+        font-size: 4rem;
         &:hover {
             color: var(--purple);
         }
@@ -53,6 +65,34 @@ const NavStyles = styled.nav`
         span {
             margin-left: 1rem;
         }
+        @media (max-width: 800px) {
+            font-size: 2rem;
+        }
+        &[aria-current='page'] {
+            color: var(--purple)
+        }
+    }
+
+    @media (max-width: 600px) {
+        --columns: 4;
+        margin-bottom: 2rem;
+        ul {
+            grid-template-rows: auto auto;
+            grid-template-columns: repeat(var(--columns), 1fr);
+            justify-items: center;
+            gap: 1rem;
+        }
+        .logo {
+            order: 0;
+            grid-column: 1 / -1;
+        }
+        img {
+            max-width: 150px;
+        }
+        
+    }
+    @media (max-width: 500px) {
+        --columns: 2;
     }
 `;
 
@@ -69,9 +109,11 @@ export default function Nav() {
                 <li className="logo">
                     <Link to="/"><img src={Logo} alt="logo" /></Link>
                 </li>
+                <li>
                     <button className="header__checkout snipcart-checkout">
                         <FaShoppingCart /><span className="snipcart-items-count">0</span>
                     </button>
+                </li>
                 <li>
                     <button className="snipcart-customer-signin">Account</button>
                 </li>
