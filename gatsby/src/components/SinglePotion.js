@@ -23,6 +23,13 @@ button:hover {
     --cast: 4px;
     background: var(--blue);
 }
+
+.potion-image-container {
+    max-width: 300px;
+    max-height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
 `;
 
 export default function SinglePotion({ potion }) {
@@ -37,6 +44,8 @@ export default function SinglePotion({ potion }) {
             <GatsbyImage
                 image={potion.image.asset.gatsbyImageData}
                 alt={potion.name}
+                className="potion-image-container"
+                imgClassName="potion-image"
             />
             <button
                 className="snipcart-add-item"
