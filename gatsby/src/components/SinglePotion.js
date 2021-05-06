@@ -45,7 +45,6 @@ export default function SinglePotion({ potion }) {
                 image={potion.image.asset.gatsbyImageData}
                 alt={potion.name}
                 className="potion-image-container"
-                imgClassName="potion-image"
             />
             <button
                 className="snipcart-add-item"

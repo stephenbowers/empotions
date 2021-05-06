@@ -77,9 +77,6 @@ export const query = graphql`
             placeholder: BLURRED
             layout: CONSTRAINED
             formats: [AUTO, WEBP]
-            outputPixelDensities: [0.25, 0.5, 1, 2]
-            height: 300
-            width: 300
           )
         }
       }

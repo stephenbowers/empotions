@@ -32,6 +32,13 @@ const PotionGrid = styled.div`
         }
     }
 
+    .potion-image-container {
+        max-width: 400px;
+        max-height: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     @media (max-width: 400px) {
       grid-template-columns: minmax(300px, 1fr);
     }
@@ -47,7 +54,7 @@ export default function SinglePotionPage({ data }) {
             <GatsbyImage 
                 image={potion.image.asset.gatsbyImageData}
                 alt={potion.name}
-                layout="constrained"
+                className="potion-image-container"
                 />
             <div>
                 <h2>{potion.name} <GiPotionBall /> {formatMoney(potion.price)}</h2>
@@ -92,7 +99,6 @@ export const query = graphql`
                 asset {
                     url
                     gatsbyImageData(
-                        width: 300,
                         placeholder: BLURRED,
                         formats: [AUTO, WEBP, AVIF]
                     )
