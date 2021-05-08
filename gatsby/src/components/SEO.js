@@ -31,7 +31,7 @@ export default function SEO({ children, location, description, title, image}) {
         <meta property="og:image" content={image || '/logo.svg'} />
         <meta property="og:title" content={title} key="ogtitle" />
         <meta property="og:site_name" content={site.siteMetadata.title} key="ogsitename" />
-        <meta property="og:description" content={description} key="ogdesc" />
+        <meta property="og:description" content={site.siteMetadata.description} key="ogdesc" />
         {children}
     </Helmet>
     );
